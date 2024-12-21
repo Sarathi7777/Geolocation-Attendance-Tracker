@@ -83,7 +83,7 @@ export default function HomePage() {
     };
 
     checkGeofence();
-  }, [currentPosition, geofences]);
+  });
 
 
   console.log("Current Position: ", currentPosition);
@@ -444,7 +444,7 @@ export default function HomePage() {
               )}
             >
               <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                <span>✨ Today's Attendance</span>
+                <span>✨ Today&apos;s Attendance</span>
               </AnimatedShinyText>
             </div>
           </div>

@@ -43,7 +43,7 @@ const SocialIconsWrapper = styled.div`
 `;
 
 const FooterLogoImage = styled.img`
-  content: url('https://raw.githubusercontent.com/devxoshakya/presence/9bdba15a4ad6e7b0ff6d7abd64df1f69e912af80/public/logo.svg');
+  content: url('#glbat-logo.svg');
   max-width: 8rem;
   height: auto;
   @media (min-width: 600px) {
@@ -102,29 +102,29 @@ function NewFooter() {
           <Text as="p" $isSub={true}>
             &copy; {getYear()}{' '}
             <a
-              href="https://www.presence.devxoshakya.xyz"
+              href="https://github.com/Sarathi7777"
               rel="noopener noreferrer"
               style={{ color: '#00f7d6' }}
             >
               GLBAT
             </a>{' '}
-            | Website Made by <strong><a href='https://adslabs.devxoshakya.xyz' style={{ color: '#00f7d6' }} rel='noopener noreferrer'>Ideation X</a></strong>
+            | Website Made by <strong><a href='https://github.com/Sarathi7777' style={{ color: '#00f7d6' }} rel='noopener noreferrer'>Ideation X</a></strong>
           </Text>
           <nav aria-label="Social Links" style={{ color: '#00f7d6' }}>
             <SocialIconsWrapper>
               {[
                 {
-                  href: 'https://instagram.com/devxoshakya',
+                  href: '#',
                   Icon: FaInstagram,
                   label: 'Instagram',
                 },
                 {
-                  href: 'https://x.com/devxoshakya',
+                  href: '#',
                   Icon: FaTwitter,
                   label: 'Twitter',
                 },
                 {
-                  href: 'https://github.com/devxoshakya',
+                  href: 'https://github.com/Sarathi7777',
                   Icon: FaGithub,
                   label: 'Github',
                 },

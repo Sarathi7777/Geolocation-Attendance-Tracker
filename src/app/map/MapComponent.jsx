@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { MapContainer, TileLayer, Marker, Circle, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -84,6 +84,21 @@ const MapComponent = () => {
     }
   }, [initialPositionSet]);
 
+  const calculateDistance = useCallback((lat1, lon1, lat2, lon2) => {
+    const R = 6371; // Radius of the earth in km
+    const dLat = deg2rad(lat2 - lat1);
+    const dLon = deg2rad(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(deg2rad(lat1)) *
+        Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const d = R * c; // Distance in km
+    return d;
+  },[]);
+  
   useEffect(() => {
     console.log("Calculating distances. Position:", position, "Geofences:", geofences);
     const locationsWithDistance = geofences.map((loc) => {
@@ -97,22 +112,22 @@ const MapComponent = () => {
     console.log("Locations with distances:", locationsWithDistance);
     const sortedLocations = locationsWithDistance.sort((a, b) => a.distance - b.distance);
     setNearestLocations(sortedLocations.slice(0, 5));
-  }, [position, geofences]);
+  }, [position, geofences,calculateDistance]);
 
-  const calculateDistance = (lat1, lon1, lat2, lon2) => {
-    const R = 6371; // Radius of the earth in km
-    const dLat = deg2rad(lat2 - lat1);
-    const dLon = deg2rad(lon2 - lon1);
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(deg2rad(lat1)) *
-        Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const d = R * c; // Distance in km
-    return d;
-  };
+  // const calculateDistance = useCallback((lat1, lon1, lat2, lon2) => {
+  //   const R = 6371; // Radius of the earth in km
+  //   const dLat = deg2rad(lat2 - lat1);
+  //   const dLon = deg2rad(lon2 - lon1);
+  //   const a =
+  //     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+  //     Math.cos(deg2rad(lat1)) *
+  //       Math.cos(deg2rad(lat2)) *
+  //       Math.sin(dLon / 2) *
+  //       Math.sin(dLon / 2);
+  //   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  //   const d = R * c; // Distance in km
+  //   return d;
+  // },[]);
 
   const deg2rad = (deg) => {
     return deg * (Math.PI / 180);

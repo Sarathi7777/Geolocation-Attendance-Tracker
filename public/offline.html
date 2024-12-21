@@ -50,82 +50,118 @@
 
     <script>
       const geofences = [
-        {
-          _id: {
-            $oid: "66cad4e0aa7d74b7fc304c85",
-          },
-          id: 9,
-          name: "Miet Campus",
-          lat: 28.974401,
-          lon: 77.638944,
-          radius: 500,
-          color: "yellow",
-        },
-        {
-          _id: {
-            $oid: "66cad923972da2dc719e41d2",
-          },
-          id: 1,
-          name: "Mars Resort",
-          lat: 28.962149,
-          lon: 77.639927,
-          radius: 150,
-          color: "#33FF57",
-        },
-        {
-          _id: {
-            $oid: "66d2aaf6a2418abb70411d13",
-          },
-          name: "Home",
-          lat: 28.9818,
-          lon: 77.734388,
-          radius: 200,
-          color: "blue",
-        },
-        {
-          _id: {
-            $oid: "66d2cf84a2418abb70411d1a",
-          },
-          name: "Ayush ka Ghar",
-          lat: 28.97811,
-          lon: 77.73581,
-          radius: 200,
-          color: "green",
-          id: 69,
-        },
-        {
-          _id: {
-            $oid: "66d5f45b03de70d3a53c67ae",
-          },
-          name: "Suryansh ka Ghar",
-          lat: 29.063011,
-          lon: 77.719287,
-          radius: 200,
-          color: "pink",
-          id: 6969,
-        },
-        {
-          _id: {
-            $oid: "66db15de2e1924077daa0a96",
-          },
-          name: "AICTE Idea Lab",
-          lat: 28.973062,
-          lon: 77.640692,
-          radius: 80,
-          color: "green",
-          id: 99,
-        },
-        {
-          _id: {
-            $oid: "66db17012e1924077daa0a97",
-          },
-          name: "MIET Auditorium",
-          lat: 28.97411,
-          lon: 77.640511,
-          radius: 70,
-          color: "red",
-          id: 89,
-        },
+      {
+    "id": 1,
+    "name": "KCE J Block",
+    "lat": 10.880439937641645,
+    "lng": 77.01838603671891,
+    "radius": 50,
+    "color": "#FF5733"
+  },
+  {
+    "id": 2,
+    "name": "KCE C Block 2",
+    "lat": 10.879386730833197,
+    "lng": 77.02030572509659,
+    "radius": 20,
+    "color": "#33FF57"
+  },
+  {
+    "id": 2,
+    "name": "KCE C Block 1",
+    "lat": 10.87907855257895,
+    "lng": 77.02055785274307,
+    "radius": 33,
+    "color": "#33FF57"
+  },
+  {
+    "id": 3,
+    "name": "KCE E Block",
+    "lat": 10.877157063028381,
+    "lng": 77.0205268634421,
+    "radius": 50,
+    "color": "#3357FF"
+  },
+  {
+    "id": 4,
+    "name": "KCE Ladies Hostel",
+    "lat": 10.877693048971965,
+    "lng": 77.0222149819803,
+    "radius": 95,
+    "color": "#FF33E9"
+  },
+  {
+    "id": 5,
+    "name": "KCE Auditorium",
+    "lat": 10.878464348038065,
+    "lng": 77.02089854343953,
+    "radius": 40,
+    "color": "#33FFF6"
+  },
+  {
+    "id": 6,
+    "name": "KCE Main Block",
+    "lat": 10.879577356969357,
+    "lng": 77.0218939526064,
+    "radius": 25,
+    "color": "#FFB733"
+  },
+  {
+    "id": 7,
+    "name": "KCE Food Court",
+    "lat": 10.878846891211372,
+    "lng": 77.02156748751516,
+    "radius": 23,
+    "color": "#FF5733"
+  },
+  {
+    "id": 8,
+    "name": "KCE H Block",
+    "lat": 10.878175117027958, 
+    "lng": 77.01880645486271,
+    "radius": 35,
+    "color": "#33FFF6"
+  },
+  {
+    "id": 9,
+    "name": "KCE M Block",
+    "lat": 10.880441361863994,
+    "lng": 77.02095025082824,
+    "radius": 20,
+    "color": "#FF5733"
+  },
+  {
+    "id": 10,
+    "name": "KCE Main Gate",
+    "lat": 10.880447380539012,
+    "lng": 77.02256947011604,
+    "radius": 10,
+    "color": "#33FFF6"
+  },
+  {
+    "id": 11,
+    "name": "KCE Central Library",
+    "lat": 10.88045778794643,
+    "lng": 77.02154741658835,
+    "radius": 15,
+    "color": "#FF5733"
+  },
+  {
+    "id": 12,
+    "name": "KCE Academy Block",
+    "lat": 10.877587704786935,
+    "lng": 77.01997548203458,
+    "radius": 15,
+    "color": "#33FFF6"
+  },
+  {
+    "id": 13,
+    "name": "KCE Open Air Theater",
+    "lat": 10.879412751700055,
+    "lng": 77.020699248816,
+    "radius": 10,
+    "color": "#FF5733"
+  },
       ];
 
       let currentPosition = null;

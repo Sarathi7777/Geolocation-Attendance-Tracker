@@ -82,7 +82,7 @@ export default function Home() {
                   Get Started
                 </Button>
               </Link>
-              <Link href={"https://github.com/ads-labs/presence/releases/download/1.0.1/Presence.apk"}>
+              <Link href={"glbat.apk"}>
                 <Button className="mt-[1.6rem] bg-[#00f7d6] hover:!bg-cyan-700 ml-2 text-black">
                   Download App
                 </Button>
@@ -92,12 +92,12 @@ export default function Home() {
 
           <BlurFade delay={0.25 * 2} inView>
             <div id="main-image" className="md:px-8 py-16 md:py-0">
-              <img
+              <Image
                 src={"/images/main-image.webp"}
                 width={600}
                 height={400}
                 alt="main-image"
-              ></img>
+              ></Image>
             </div>
           </BlurFade>
         </div>

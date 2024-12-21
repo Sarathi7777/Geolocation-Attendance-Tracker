@@ -65,13 +65,16 @@ export default function Globe({
       api.start({ r: delta / 200 });
     }
   };
-
-  const onRender = useCallback((state) => {
-    if (!pointerInteracting.current) phi += 0.005;
-    state.phi = phi + r.get();
+  const GlobeComponent = () => {
+    const pointerInteracting = useRef(false); // Assuming this is used somewhere
+    const phiRef = useRef(0); // Create a ref to store the phi value
+    const r = useRef({ get: () => 0 }); // Example for the r object
+    const onRender = useCallback((state) => {
+    if (!pointerInteracting.current) phiRef.current += 0.005;
+    state.phi = phiRef.current + r.get();
     state.width = width * 2;
     state.height = width * 2;
-  }, [pointerInteracting, phi, r]);
+  }, [pointerInteracting, r]);
 
   const onResize = () => {
     if (canvasRef.current) {
@@ -92,7 +95,7 @@ export default function Globe({
 
     setTimeout(() => (canvasRef.current.style.opacity = "1"));
     return () => globe.destroy();
-  }, []);
+  }, [onRender]);
 
   return (
     (<div
@@ -113,4 +116,4 @@ export default function Globe({
         } />
     </div>)
   );
-}
+}}

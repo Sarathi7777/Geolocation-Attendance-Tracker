@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { DatePickerDemo } from "@/components/History/date";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Footprints } from "lucide-react";
@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { useSession } from "next-auth/react";
 import MainDock from "@/components/home/Dock";
 import AdminDock from "@/components/home/Admindock";
-
 
 function MainPage() {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -19,13 +18,9 @@ function MainPage() {
 
   const email = session?.user?.email; // Replace with actual email or use state/prop
 
-  useEffect(() => {
-    if (selectedDate) {
-      fetchAttendanceData();
-    }
-  }, [selectedDate]);
+  const fetchAttendanceData = useCallback(async () => {
+    if (!selectedDate) return; // Prevent fetching if no date is selected
 
-  const fetchAttendanceData = async () => {
     setLoading(true);
     setError(null);
     try {
@@ -56,7 +51,11 @@ function MainPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedDate, email]);
+
+  useEffect(() => {
+    fetchAttendanceData();
+  }, [fetchAttendanceData]); // Added fetchAttendanceData to the dependencies
 
   const totalHours = attendanceData
     ? attendanceData.entries.reduce((sum, entry) => sum + entry.total_hours, 0)
@@ -71,17 +70,15 @@ function MainPage() {
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-     { selectedDate && (totalHours !== 0) && <div className="font-semibold border-l-8 border-blue-500 pl-2 mr-auto ml-8 md:ml-[10rem]">
+      { selectedDate && (totalHours !== 0) && <div className="font-semibold border-l-8 border-blue-500 pl-2 mr-auto ml-8 md:ml-[10rem]">
         Total Working Hours <br></br>
         {totalHours} Hrs
-      </div>
-    }
+      </div>}
 
       {attendanceData && (
         <div className="">
           {attendanceData.entries.map((entry, index) => (
             <div key={index}>
-              
               <Alert className="my-2 w-80">
                 <Footprints className="h-4 w-4" />
                 <div>
@@ -125,8 +122,7 @@ function MainPage() {
       )}
 
       {/* Other components and content */}
-      {session?.user?.role=== "admin"? <AdminDock /> : <MainDock />}
-
+      {session?.user?.role === "admin" ? <AdminDock /> : <MainDock />}
     </div>
   );
 }

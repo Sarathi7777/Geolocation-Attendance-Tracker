@@ -9,7 +9,7 @@ import { Terminal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 
-const page = () => {
+const Page = () => {
   const { data: session, status } = useSession();
   if (status === "loading") {
     return <div className="flex justify-center items-center mt-64 h-3"><FadeLoader/></div>;
@@ -98,4 +98,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

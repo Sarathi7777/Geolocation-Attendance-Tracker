@@ -62,7 +62,7 @@ function LoginFormDemo() {
         </div>
       </div>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300 text-white">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="/signup" className="text-[#00f7d6] font-semibold">
           Sign-up
         </Link>
