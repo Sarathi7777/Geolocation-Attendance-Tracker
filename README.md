@@ -1,2 +1,4 @@
 # GLBAT
-A geolocation based attendance tracking web/mobile app.
+A geolocation based attendance tracking web Application
+
+Vercel
