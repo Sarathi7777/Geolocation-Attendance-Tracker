@@ -158,6 +158,7 @@ const handler = NextAuth({
     signIn: "/login",
   },
   secret: process.env.NEXTAUTH_SECRET,
+  database: process.env.MONGO_URI,
 });
 
 export { handler as GET, handler as POST };
