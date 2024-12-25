@@ -52,7 +52,7 @@ function LoginFormDemo() {
   };
 
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 md:shadow-[0px_2px_0px_2px_#00f7d6_inset,0px_-2px_0px_-2px_#00f7d6_inset] shadow-input bg-black dark:bg-white md:mt-16 mt-16">
+    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 md:shadow-[0px_5px_0px_5px_#00f7d6_inset,0px_-5px_0px_-5px_#00f7d6_inset] shadow-input bg-black dark:bg-white md:mt-16 mt-16">
       <div className="flex gap-2 ">
         <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200 text-white">
           Welcome to

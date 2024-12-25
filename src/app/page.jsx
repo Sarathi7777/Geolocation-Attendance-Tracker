@@ -16,7 +16,7 @@ export default function Home() {
           <div className="mx-auto">
             <div className="flex justify-between items-center py-4 px-4 md:px-16 bg-black">
               <div className="w-40 md:w-64">
-                <Image src="/logo.svg" alt="Logo" width="98" height="98" />
+                <Image src="/logo.svg" alt="Logo" width="250" height="150" />
               </div>
               <div>
                 <Link href="/login" className="text-[#00f7d6] font-eurostile-bold">

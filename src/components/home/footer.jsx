@@ -43,7 +43,7 @@ const SocialIconsWrapper = styled.div`
 `;
 
 const FooterLogoImage = styled.img`
-  content: url('#glbat-logo.svg');
+  content: url('logo.svg');
   max-width: 8rem;
   height: auto;
   @media (min-width: 600px) {
@@ -95,7 +95,7 @@ function NewFooter() {
       <footer className='mx-4 mb-4 bg-black'>
         <FooterBaseContainer aria-label="Main Footer" $isSub={false}>
           <Text as="p" $isSub={false}>
-            <FooterLogoImage alt="Footer Logo" /> <br />
+            <FooterLogoImage  alt="Footer Logo" /> <br />
           </Text>
         </FooterBaseContainer>
         <FooterBaseContainer aria-label="Sub Footer" $isSub={true}>
