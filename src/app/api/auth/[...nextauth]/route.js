@@ -154,6 +154,26 @@ const handler = NextAuth({
       return session;
     },
   },
+
+
+
+
+
+  session: {
+    strategy: 'jwt', // Or 'database' if using database-backed sessions
+  },
+  cookies: {
+    sessionToken: {
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+    },
+  },
+
+
+
+
+
+  
   pages: {
     signIn: "/login",
   },
