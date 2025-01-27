@@ -121,4 +121,4 @@ To run the application as a native mobile app:
     For any queries, reach out to:
     Sarathi T
     sarathiff777@gmail.com
-    [Your GitHub Profile](https://github.com/Sarathi7777)
+    [GitHub Profile](https://github.com/Sarathi7777)
